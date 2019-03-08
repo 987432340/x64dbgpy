@@ -30,6 +30,19 @@ std::vector<THREADALLINFO> GetThreadInfoList(THREADLIST* l)
 }
 %}
 
+%template(argVector) std::vector<DISASM_ARG>;
+%inline %{
+std::vector<DISASM_ARG> GetArgList(DISASM_ARG* arg, int n) {
+  std::vector<DISASM_ARG> vec;
+  for(int i = 0; i < n; i++)
+  {
+    vec.push_back(*arg);
+	arg++;
+  }
+  return vec;
+}
+%}
+
 %include <windows.i>
 #define DECLSPEC_ALIGN(x) __declspec(align(x))
 %include "..\pluginsdk\bridgemain.h"
