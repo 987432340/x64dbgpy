@@ -96,6 +96,14 @@ except __builtin__.Exception:
     _newclass = 0
 
 
+def voidp_to_charp(x):
+    return _example.voidp_to_charp(x)
+voidp_to_charp = _example.voidp_to_charp
+
+def char_to_void(x):
+    return _example.char_to_void(x)
+char_to_void = _example.char_to_void
+
 def factorial(n):
     return _example.factorial(n)
 factorial = _example.factorial

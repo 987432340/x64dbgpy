@@ -12,6 +12,11 @@
   $result = PyInt_FromLong($1);
 }
 
+%include <cpointer.i>
+%pointer_cast(void*, char*, voidp_to_charp);
+%pointer_cast(char*,void*, char_to_void);
+
+	
 %inline %{
 int factorial(int n);
 int DbgMemRead(int va, char* dest, int size);
