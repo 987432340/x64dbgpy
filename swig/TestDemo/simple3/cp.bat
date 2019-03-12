@@ -1,0 +1,1 @@
+xcopy .\build\lib.win32-2.7\* . /y
