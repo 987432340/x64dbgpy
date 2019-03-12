@@ -99,6 +99,10 @@ except __builtin__.Exception:
 def factorial(n):
     return _example.factorial(n)
 factorial = _example.factorial
+
+def DbgMemRead(va, dest, size):
+    return _example.DbgMemRead(va, dest, size)
+DbgMemRead = _example.DbgMemRead
 # This file is compatible with both classic and new-style classes.
 
 
