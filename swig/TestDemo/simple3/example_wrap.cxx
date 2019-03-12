@@ -3112,6 +3112,7 @@ namespace swig {
 
 int factorial(int n);
 int DbgMemRead(int va, char* dest, int size);
+int DbgMemRead2(int va, void* dest, int size);
 
 
 #include <limits.h>
@@ -3456,10 +3457,45 @@ fail:
 }
 
 
+SWIGINTERN PyObject *_wrap_DbgMemRead2(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  int arg1 ;
+  void *arg2 = (void *) 0 ;
+  int arg3 ;
+  int res2 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  int result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OOO:DbgMemRead2",&obj0,&obj1,&obj2)) SWIG_fail;
+  {
+    arg1 = PyInt_AsLong(obj0);
+    arg1 = arg1 + 1;
+  }
+  res2 = SWIG_ConvertPtr(obj1,SWIG_as_voidptrptr(&arg2), 0, 0);
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "DbgMemRead2" "', argument " "2"" of type '" "void *""'"); 
+  }
+  {
+    arg3 = PyInt_AsLong(obj2);
+    arg3 = arg3 + 1;
+  }
+  result = (int)DbgMemRead2(arg1,arg2,arg3);
+  {
+    resultobj = PyInt_FromLong(result);
+  }
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"factorial", _wrap_factorial, METH_VARARGS, NULL},
 	 { (char *)"DbgMemRead", _wrap_DbgMemRead, METH_VARARGS, NULL},
+	 { (char *)"DbgMemRead2", _wrap_DbgMemRead2, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };
 

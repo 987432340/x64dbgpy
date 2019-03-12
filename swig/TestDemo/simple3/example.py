@@ -103,6 +103,10 @@ factorial = _example.factorial
 def DbgMemRead(va, dest, size):
     return _example.DbgMemRead(va, dest, size)
 DbgMemRead = _example.DbgMemRead
+
+def DbgMemRead2(va, dest, size):
+    return _example.DbgMemRead2(va, dest, size)
+DbgMemRead2 = _example.DbgMemRead2
 # This file is compatible with both classic and new-style classes.
 
 
