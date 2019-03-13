@@ -43,6 +43,10 @@ std::vector<DISASM_ARG> GetArgList(DISASM_ARG* arg, int n) {
 }
 %}
 
+%include <cpointer.i>
+%pointer_cast(void*, char*, void_to_char);
+%pointer_cast(char*,void*, char_to_void);
+
 %include <windows.i>
 #define DECLSPEC_ALIGN(x) __declspec(align(x))
 %include "..\pluginsdk\bridgemain.h"
